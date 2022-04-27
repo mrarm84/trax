@@ -20,7 +20,7 @@ class Trip extends Model
         $this->attributes['year'] = Carbon::parse($value);
     }
 
-    public function scopeCurrentCar($query, $id)
+    public function scopeGivenCar($query, $id)
     {
         return $query->where('car_id', '=', $id);
     }

@@ -21,11 +21,9 @@ class Car extends Model
     protected $fillable = ['make', 'model', 'year' ];
 
 
-
     public function getTripCountAttribute()
     {
         return $this->trips()
-//                    ->where('car_id', '=', $this->id)
                     ->givenCar($this->id)
                     ->count('id');
     }
@@ -36,8 +34,6 @@ class Car extends Model
                     ->where('car_id', '=', $this->id)
                     ->sum('miles');
     }
-
-
 
     /**
      * Get the comments for the blog post.
