@@ -68,15 +68,4 @@ class CarController extends Controller
         return ["success" => $success];
     }
 
-    /**
-     * Search for a name
-     *
-     * @param  str  $name
-     * @return \Illuminate\Http\Response
-     */
-    public function search($title)
-    {
-        $cars = Car::where('title', 'like', '%'.$title.'%')->get();
-        return CarResource::collection($cars);
-    }
 }
