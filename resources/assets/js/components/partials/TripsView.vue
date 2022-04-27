@@ -16,7 +16,11 @@
                 >
                     <template slot="items" slot-scope="props">
                         <td>{{ props.item.date }}</td>
-                        <td>{{ props.item.car.year + ' ' + props.item.car.make + ' ' + props.item.car.model}}</td>
+                        <td>
+                            <span v-if="props.item.car.year">{{ props.item.car.year}}</span>
+                            <span v-if="props.item.car.make">{{ props.item.car.make}}</span>
+                            <span v-if="props.item.car.model">{{ props.item.car.model}}</span>
+                        </td>
                         <td>{{ props.item.miles }}</td>
                         <td>{{ props.item.total }}</td>
                     </template>

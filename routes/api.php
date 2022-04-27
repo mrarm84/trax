@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use \App\Http\Controllers\CarController;
+use \App\Http\Controllers\TripController;
 
 /*
 |--------------------------------------------------------------------------
@@ -173,3 +175,34 @@ Route::post('mock-add-trip', function(Request $request) {
         'miles' => 'required|numeric'
     ]);
 })->middleware('auth:api');
+
+
+Route::get('/get-cars',  [CarController::class, 'index'])
+->middleware('auth:api');
+
+
+Route::get('/get-car/{car}', [CarController::class, 'show']);
+//    ->middleware('auth:api');
+
+
+Route::post('add-car',   [CarController::class, 'store']);
+//    ->middleware('auth:api');
+
+Route::delete('delete-car/{id}', [CarController::class, 'destroy']);
+//    ->middleware('auth:api');
+
+
+
+
+
+
+Route::get('/get-trips',  [TripController::class, 'index'])
+;
+//->middleware('auth:api');
+
+
+Route::post('add-trip', [TripController::class, 'store']);
+//->middleware('auth:api');
+
+
+

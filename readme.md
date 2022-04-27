@@ -78,3 +78,13 @@ docker-compose exec workspace npm run watch
 Commit your changes locally and when finished, publish your repo on your public bitbucket or github account.
 
 **GOOD LUCK!**
+
+
+
+#Testing using PHPUnit
+
+To change db to testing (configured in phpunit.xml): 
+php artisan config:cache --env=testing
+
+To change to local db (use to not override your db)
+php artisan config:cache --env=local 
